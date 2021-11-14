@@ -164,7 +164,7 @@ def __collect_samples(ast, args):
             sample = __collect_sample(ast, node_index, args)
             if sample is not None:
                 samples.append(sample)
-
+            break #break on first sample returned 
     return samples
 
 

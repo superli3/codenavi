@@ -6,7 +6,6 @@ import itertools
 import tqdm
 import joblib
 import numpy as np
-from datetime import datetime
 
 from pathlib import Path
 from sklearn import model_selection as sklearn_model_selection
@@ -49,7 +48,7 @@ def __terminals(ast, node_index, args):
         if 'Class' in v_node['term']:
             if v == node_index:  # Top-level func def node.
                 if args.use_method_name:
-                    paths.append((stack.copy(), METHOD_NAME))
+                    paths.append((stack.copy(), METHOD_NAME)) #replace METHOD_NAME with positive or negative
         else:
             v_type = v_node['term']
 
@@ -124,7 +123,7 @@ def __delim_name(name):
 
 def __collect_sample(ast, fd_index, args):
     root = ast['vertices'][fd_index]
-    if root['term'] not in ('Class'):
+    if root['term'] not in ('Class','Function'):
         raise ValueError('Wrong node type.')
 
     target = root['term']
@@ -158,9 +157,8 @@ def __collect_samples(ast, args):
         targets.add(edge['target'])
 
     for node_index, node in enumerate(ast['vertices']):
-        # if ((node['term'] == 'Class') or 
-        #     (node['term'] == 'Function' and node['vertexId'] not in targets)):
-        if node['term'] == 'Class':
+        if ((node['term'] == 'Class') or 
+            (node['term'] == 'Function' and node['vertexId'] not in targets)):
             sample = __collect_sample(ast, node_index, args)
             if sample is not None:
                 samples.append(sample)
@@ -184,49 +182,29 @@ def __collect_all_and_save(asts, args, output_file):
 def main():
     args = parser.parse_args()
     np.random.seed(args.seed)
-    print('start')
-    print(datetime.now())
+    print('blah')
     data_dir = Path(args.data_dir)
-    positives = __collect_asts(data_dir / 'parsed_positive.json')
-    negatives = __collect_asts(data_dir / 'parsed_negative.json')
+    trains = __collect_asts(data_dir / 'parsed_test.json')
+    evals = __collect_asts(data_dir / 'parsed_test.json')
     print('blah1')
     #trains=1
-
-    positives_labels = np.ones((len(positives),))
-    negative_labels = np.zeros((len(negatives),))
-
-    training_set = positives + negatives
-    labels = np.concatenate((positives_labels, negative_labels))
-    # train, valid = sklearn_model_selection.train_test_split(
-    #     trains,
-    #     test_size=args.valid_p,
-    # )
-    X_train, X_test, y_train, y_test = sklearn_model_selection.train_test_split(
-        training_set, labels,
+    print(len(trains))
+    train, valid = sklearn_model_selection.train_test_split(
+        trains,
         test_size=args.valid_p,
     )
+    test = evals
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(exist_ok=True)
-    # for split_name, split in zip(
-    #         ('train', 'valid', 'test'),
-    #         (train, valid, test),
-    # ):
-    for split_name, split, labels in zip(
-        ('train', 'test'),
-        (X_train, X_test),
-        (y_train, y_test)
+    for split_name, split in zip(
+            ('train', 'valid', 'test'),
+            (train, valid, test),
     ):
-        # save labels
-        output_labels_file = output_dir / f'{split_name}_label_output_file.npy'
-        with open(output_labels_file, 'wb') as f:
-            np.save(f, labels)
-
-        # save parsed sequence
         output_file = output_dir / f'{split_name}_output_file.txt'
         __collect_all_and_save(split, args, output_file)
-    print(datetime.now())
-    print('done')
+
+
 # def main():
 #     args = parser.parse_args()
 #     np.random.seed(args.seed)

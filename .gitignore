@@ -1,3 +1,6 @@
 # Ignore these files on checkin
 /**/*.json
 /**/HelloWorld
+
+# Ignore code2seq iteration by kolkir, https://github.com/Kolkir/code2seq
+/**/code2seq

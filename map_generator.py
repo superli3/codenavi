@@ -4,7 +4,7 @@ import json
 import re
 
 #set source_folder to location of PR committed files
-source_folder = 'D:\\MIDS\\ai_bug_detector\\raw_json_Closed_PR_files'
+source_folder = 'D:\\MIDS\\CYRMPR\\raw_json_Closed_PR_files'
 files = os.listdir(source_folder)
 files = [item for item in files if item.startswith('Closed_PRs_')]
 
