@@ -20,10 +20,10 @@ The process of converting the underlying history of code changes for a project i
 
 An important aspect here is that the project has a long history of committers and contributors. Additionally, you will need to be able to label Pull Request accordingly. For the project, I have picked out matplotlib, however, any project in particular will do.
 
-![Matplotlib Pull Requests](.\images\Pull_Requests.png "Matplotlib Pull Requests")
+![Matplotlib Pull Requests](images\Pull_Requests.png "Matplotlib Pull Requests")
 
 
-![Matplotlib Issues](.\images\issues.png "Matplotlib Issues")
+![Matplotlib Issues](images\issues.png "Matplotlib Issues")
 
 Matplotlib has an extensive history of pull requests (10k+), as well has a long history of closed issues which link back to pull requests.
 
@@ -50,7 +50,7 @@ python PR_api_request.py <your user generated PAT token>
 Once the raw json data has been scraped, you will want to extract the files that were changed for each individual pull request. A flow chart of this process is provided below, for 1 hash iteration
 
 
-![Git Scraper flow chart](.\images\git_flow_chart.png "Flowchart")
+![Git Scraper flow chart](images\git_flow_chart.png "Flowchart")
 
 This process will be repeated multiple times via the bash script git_scraper.sh
 
@@ -123,20 +123,23 @@ The VM instance in particular used was a g4dn.xlarge instance with a T4 GPU. An 
 ssh -i "w251-ec2.pem" ubuntu@<ec2 instance dns>.compute-1.amazonaws.com
 
 # pull docker container
-docker pull nvcr.io/nvidia/tensorflow:21.10-tf1-py3
+docker pull nvcr.io/nvidia/tensorflow:21.10-tf2-py3
 
 # mount any additional storage provisioned by VM
 sudo mount /dev/nvme1n1 /home/ubuntu/storage
+
+# clone file
+https://superli3w251.s3.amazonaws.com/limited.tar
 
 # pull the files on the tar'd VM
 sudo wget <location of tar'd data>
 
 
 # run docker container
-docker run --gpus all -it --rm -v "/home/ubuntu/storage":"/workspace/storage" nvcr.io/nvidia/pytorch:21.05-py3
+docker run --gpus all -it --rm -v "/home/ubuntu/project":"/workspace/project" -p 8888:8888 nvcr.io/nvidia/tensorflow:21.10-tf2-py3
 
 # run docker container without mounted storage 
-docker run --gpus all -it --rm -p 8888:8888 nvcr.io/nvidia/tensorflow:21.10-tf1-py3
+docker run --gpus all -it --rm -p 8888:8888 nvcr.io/nvidia/tensorflow:21.10-tf2-py3
 
 
 # run jupyter lab
@@ -148,6 +151,11 @@ git clone https://github.com/superli3/CYRMPR.git
 # docker container
 
 ip instance:8888 
+
+
+# untar files
+tar -xvf limited.tar
+
 
 ```
 
