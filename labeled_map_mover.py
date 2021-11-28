@@ -10,7 +10,8 @@ from random import sample
 import time
 
 
-sampling_multiplier = 5
+#sampling_multiplier = 5
+sampling_multiplier = 1
 source_folder = 'D:\\mids\\real_parsed_data'
 magic_folder = 'D:\\mids\\data\\stage'
 mapping = pd.read_csv('mapping.csv')
@@ -22,8 +23,8 @@ source_folder_directories =[os.path.join(source_folder, o).rsplit('\\')[-1] for 
                     if os.path.isdir(os.path.join(source_folder,o))]
 
 print(time.ctime())
-for hash in source_folder_directories:
-    copy_tree(source_folder + '\\' + hash, magic_folder + '\\' + hash)
+# for hash in source_folder_directories:
+#     copy_tree(source_folder + '\\' + hash, magic_folder + '\\' + hash)
     #print(source_folder + '\\' + hash)
 print(time.ctime())
 

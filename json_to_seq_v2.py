@@ -175,8 +175,8 @@ def __collect_all_and_save(asts, args, output_file, labels):
     samples = list(itertools.chain.from_iterable(samples))
 
     with open(output_file, 'w') as f:
-        for line_index, line in enumerate(samples):
-            f.write(line + ('' if line_index == len(samples) - 1 else '\n'))
+        for line_index, line in enumerate(zip(samples, labels)):
+            f.write(str(int(line[1])) + ' ' + line[0] + ('' if line_index == len(samples) - 1 else '\n'))
 
 
 
@@ -201,10 +201,21 @@ def main():
     #     trains,
     #     test_size=args.valid_p,
     # )
-    X_train, X_test, y_train, y_test = sklearn_model_selection.train_test_split(
+
+    #Train ratio
+    #60 train 20 val 20 test
+    X_train, X_temp, y_train, y_temp = sklearn_model_selection.train_test_split(
         training_set, labels,
-        test_size=args.valid_p,
+        #test_size=args.valid_p,
+        test_size=0.4,
     )
+
+    X_test, X_val, y_test, y_val = sklearn_model_selection.train_test_split(
+        X_temp, y_temp,
+        #test_size=args.valid_p,
+        test_size=0.5,
+    )
+
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(exist_ok=True)
@@ -213,9 +224,9 @@ def main():
     #         (train, valid, test),
     # ):
     for split_name, split, labels in zip(
-        ('train', 'test'),
-        (X_train, X_test),
-        (y_train, y_test)
+        ('train', 'test', 'valid'),
+        (X_train, X_test, X_val),
+        (y_train, y_test, y_val)
     ):
         # save labels
         output_labels_file = output_dir / f'{split_name}_label_output_file.npy'

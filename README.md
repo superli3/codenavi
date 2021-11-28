@@ -20,7 +20,7 @@ The process of converting the underlying history of code changes for a project i
 
 An important aspect here is that the project has a long history of committers and contributors. Additionally, you will need to be able to label Pull Request accordingly. For the project, I have picked out matplotlib, however, any project in particular will do.
 
-![Matplotlib Pull Requests](images\Pull_Requests.png "Matplotlib Pull Requests")
+![Matplotlib Pull Requests](\images\Pull_Requests.png?raw=true "Matplotlib Pull Requests")
 
 
 ![Matplotlib Issues](images\issues.png "Matplotlib Issues")
@@ -136,11 +136,21 @@ sudo wget <location of tar'd data>
 
 
 # run docker container
+
+## tf 2
 docker run --gpus all -it --rm -v "/home/ubuntu/project":"/workspace/project" -p 8888:8888 nvcr.io/nvidia/tensorflow:21.10-tf2-py3
+
+## tf 1
+docker run --gpus all -it --rm -v "/home/ubuntu/project":"/workspace/project" -p 8888:8888 nvcr.io/nvidia/tensorflow:21.10-tf1-py3
 
 # run docker container without mounted storage 
 docker run --gpus all -it --rm -p 8888:8888 nvcr.io/nvidia/tensorflow:21.10-tf2-py3
 
+## run script
+source /workspace/project/CYRMPR/vm_env.sh
+
+chmod +x preprocess.sh
+./preprocess.sh $DATA_DIR
 
 # run jupyter lab
 jupyter lab
@@ -189,6 +199,9 @@ Will fill this out
 ## Projects
 
 Code2seq - Kolkir
+
+# 
+
 
 ## Papers
 

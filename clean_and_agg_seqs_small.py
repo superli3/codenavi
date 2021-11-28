@@ -6,7 +6,7 @@ positive_folder = 'D:\\mids\\data\\stage\\positive'
 positive_end_file = 'parsed_positive.json'
 negative_folder = 'D:\\mids\\data\\stage\\negative'
 negative_end_file = 'parsed_negative.json'
-ingest = 'D:\\mids\\data\\stage\\ingest'
+ingest = 'D:\\mids\\data\\stage\\ingest_test'
 ingest_end_file = 'parsed.json'
 #create endpoints if they don't exist
 def touch(fname):
@@ -20,7 +20,7 @@ touch(negative_folder + '\\' + negative_end_file)
 result_positive = []
 
 folders = glob.glob(positive_folder + '\\*')
-for folder in folders:
+for folder in folders[0:10]:
     subfiles = glob.glob(folder+'\\*')
     for file in subfiles:
         if os.path.getsize(file) > 300 and file[-5:] == '.json':
@@ -40,7 +40,7 @@ with open(ingest + '\\' + positive_end_file, 'w') as outfile:
 result_negative = []
 
 folders = glob.glob(negative_folder + '\\*')
-for folder in folders:
+for folder in folders[0:10]:
     subfiles = glob.glob(folder+'\\*')
     for file in subfiles:
         if os.path.getsize(file) > 300 and file[-5:] == '.json':
