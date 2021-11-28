@@ -1,5 +1,7 @@
 # Can You Review My Pull Request?
 
+This project is currently a work in progress.
+
 ## Overview
 
 This project contains the files for Can You Review My Pull Request, a framework to assist software developers review code by using Natural Language Processing techniques applied to code.
@@ -20,10 +22,14 @@ The process of converting the underlying history of code changes for a project i
 
 An important aspect here is that the project has a long history of committers and contributors. Additionally, you will need to be able to label Pull Request accordingly. For the project, I have picked out matplotlib, however, any project in particular will do.
 
+<<<<<<< HEAD
 ![Matplotlib Pull Requests](\images\Pull_Requests.png?raw=true "Matplotlib Pull Requests")
+=======
+![Matplotlib Pull Requests](/images/Pull_Requests.PNG?raw=true "Matplotlib Pull Requests")
+>>>>>>> b8552f5cf15f5dc5260c4b2ce3dd81523035043f
 
 
-![Matplotlib Issues](images\issues.png "Matplotlib Issues")
+![Matplotlib Issues](/images/issues.PNG?raw=true "Matplotlib Issues")
 
 Matplotlib has an extensive history of pull requests (10k+), as well has a long history of closed issues which link back to pull requests.
 
@@ -50,7 +56,7 @@ python PR_api_request.py <your user generated PAT token>
 Once the raw json data has been scraped, you will want to extract the files that were changed for each individual pull request. A flow chart of this process is provided below, for 1 hash iteration
 
 
-![Git Scraper flow chart](images\git_flow_chart.png "Flowchart")
+![Git Scraper flow chart](/images/git_flow_chart.png?raw=true "Flowchart")
 
 This process will be repeated multiple times via the bash script git_scraper.sh
 
