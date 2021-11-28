@@ -1,6 +1,8 @@
-# Can You Review My Pull Request?
+# CodeNavi
 
-This project is currently a work in progress.
+This is the repo for CodeNavi, a framework for applying neural net based langauge models to software projects, in order to help software developers identify bugs and ship better code.
+
+Note: This project is currently a work in progress.
 
 ## Overview
 
@@ -22,11 +24,7 @@ The process of converting the underlying history of code changes for a project i
 
 An important aspect here is that the project has a long history of committers and contributors. Additionally, you will need to be able to label Pull Request accordingly. For the project, I have picked out matplotlib, however, any project in particular will do.
 
-<<<<<<< HEAD
 ![Matplotlib Pull Requests](\images\Pull_Requests.png?raw=true "Matplotlib Pull Requests")
-=======
-![Matplotlib Pull Requests](/images/Pull_Requests.PNG?raw=true "Matplotlib Pull Requests")
->>>>>>> b8552f5cf15f5dc5260c4b2ce3dd81523035043f
 
 
 ![Matplotlib Issues](/images/issues.PNG?raw=true "Matplotlib Issues")
