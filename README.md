@@ -24,7 +24,7 @@ The process of converting the underlying history of code changes for a project i
 
 An important aspect here is that the project has a long history of committers and contributors. Additionally, you will need to be able to label Pull Request accordingly. For the project, I have picked out matplotlib, however, any project in particular will do.
 
-![Matplotlib Pull Requests](\images\Pull_Requests.png?raw=true "Matplotlib Pull Requests")
+![Matplotlib Pull Requests](/images/Pull_Requests.png?raw=true "Matplotlib Pull Requests")
 
 
 ![Matplotlib Issues](/images/issues.PNG?raw=true "Matplotlib Issues")
@@ -151,7 +151,7 @@ docker run --gpus all -it --rm -v "/home/ubuntu/project":"/workspace/project" -p
 docker run --gpus all -it --rm -p 8888:8888 nvcr.io/nvidia/tensorflow:21.10-tf2-py3
 
 ## run script
-source /workspace/project/CYRMPR/vm_env.sh
+source /workspace/project/codenavi/vm_env.sh
 
 chmod +x preprocess.sh
 ./preprocess.sh $DATA_DIR
@@ -160,7 +160,7 @@ chmod +x preprocess.sh
 jupyter lab
 
 # pull this repo onto the vm
-git clone https://github.com/superli3/CYRMPR.git
+git clone https://github.com/superli3/codenavi.git
 
 # docker container
 

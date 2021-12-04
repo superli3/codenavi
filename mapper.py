@@ -15,7 +15,7 @@ This script was written with an api rate limiting of 5000/hour
 """
 
 api_token = sys.argv[1]
-file_list = glob.glob("D:\\MIDS\\CYRMPR\\Closed_PRs_*")
+file_list = glob.glob("D:\\MIDS\\codenavi\\Closed_PRs_*")
 
 print(len(file_list)) 
 
