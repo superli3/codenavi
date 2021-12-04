@@ -205,31 +205,6 @@ def main():
         __collect_all_and_save(split, args, output_file)
 
 
-# def main():
-#     args = parser.parse_args()
-#     np.random.seed(args.seed)
-#     print('blah')
-#     data_dir = Path(args.data_dir)
-#     trains = __collect_asts(data_dir / 'python100k_train.json')
-#     evals = __collect_asts(data_dir / 'python50k_eval.json')
-#     print('blah1')
-
-#     print(len(trains))
-#     train, valid = sklearn_model_selection.train_test_split(
-#         trains,
-#         test_size=args.valid_p,
-#     )
-#     test = evals
-
-#     output_dir = Path(args.output_dir)
-#     output_dir.mkdir(exist_ok=True)
-#     for split_name, split in zip(
-#             ('train', 'valid', 'test'),
-#             (train, valid, test),
-#     ):
-#         output_file = output_dir / f'{split_name}_output_file.txt'
-#         __collect_all_and_save(split, args, output_file)
-
 
 if __name__ == '__main__':
     main()

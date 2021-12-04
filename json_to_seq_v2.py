@@ -189,7 +189,6 @@ def main():
     data_dir = Path(args.data_dir)
     positives = __collect_asts(data_dir / 'parsed_positive.json')
     negatives = __collect_asts(data_dir / 'parsed_negative.json')
-    print('blah1')
     #trains=1
 
     positives_labels = np.ones((len(positives),))
@@ -197,32 +196,21 @@ def main():
 
     training_set = positives + negatives
     labels = np.concatenate((positives_labels, negative_labels))
-    # train, valid = sklearn_model_selection.train_test_split(
-    #     trains,
-    #     test_size=args.valid_p,
-    # )
-
     #Train ratio
     #60 train 20 val 20 test
     X_train, X_temp, y_train, y_temp = sklearn_model_selection.train_test_split(
         training_set, labels,
-        #test_size=args.valid_p,
         test_size=0.4,
     )
 
     X_test, X_val, y_test, y_val = sklearn_model_selection.train_test_split(
         X_temp, y_temp,
-        #test_size=args.valid_p,
         test_size=0.5,
     )
 
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(exist_ok=True)
-    # for split_name, split in zip(
-    #         ('train', 'valid', 'test'),
-    #         (train, valid, test),
-    # ):
     for split_name, split, labels in zip(
         ('train', 'test', 'valid'),
         (X_train, X_test, X_val),
@@ -238,30 +226,7 @@ def main():
         __collect_all_and_save(split, args, output_file,labels)
     print(datetime.now())
     print('done')
-# def main():
-#     args = parser.parse_args()
-#     np.random.seed(args.seed)
-#     print('blah')
-#     data_dir = Path(args.data_dir)
-#     trains = __collect_asts(data_dir / 'python100k_train.json')
-#     evals = __collect_asts(data_dir / 'python50k_eval.json')
-#     print('blah1')
 
-#     print(len(trains))
-#     train, valid = sklearn_model_selection.train_test_split(
-#         trains,
-#         test_size=args.valid_p,
-#     )
-#     test = evals
-
-#     output_dir = Path(args.output_dir)
-#     output_dir.mkdir(exist_ok=True)
-#     for split_name, split in zip(
-#             ('train', 'valid', 'test'),
-#             (train, valid, test),
-#     ):
-#         output_file = output_dir / f'{split_name}_output_file.txt'
-#         __collect_all_and_save(split, args, output_file)
 
 
 if __name__ == '__main__':

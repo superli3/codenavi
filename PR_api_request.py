@@ -32,17 +32,8 @@ for i in range(1,431):
         r = requests.get(url_endpoint, headers = headers)
     else:
         r = requests.get(url_endpoint + "&page=" + str(i), headers=headers)
-    #if total_payload is None:
-    #    total_payload = r.json()
-    #else:
-    ##    total_payload = total_payload + r.json()
+
     print(r)
     with open('Closed_PRs_'+ str(i) + '.json', 'a') as f:
         json.dump(r.json(), f)
     sleep(5)
-
-
-#print(len(total_payload))
-
-# with open('Closed_PRs.json', 'a') as f:
-#     json.dump(r.json(), f)

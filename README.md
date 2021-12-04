@@ -24,7 +24,7 @@ The process of converting the underlying history of code changes for a project i
 
 An important aspect here is that the project has a long history of committers and contributors. Additionally, you will need to be able to label Pull Request accordingly. For the project, I have picked out matplotlib, however, any project in particular will do.
 
-![Matplotlib Pull Requests](/images/Pull_Requests.png?raw=true "Matplotlib Pull Requests")
+![Matplotlib Pull Requests](/images/Pull_Requests.PNG?raw=true "Matplotlib Pull Requests")
 
 
 ![Matplotlib Issues](/images/issues.PNG?raw=true "Matplotlib Issues")
