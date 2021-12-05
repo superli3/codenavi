@@ -1,6 +1,6 @@
-# CodeNavi
+# codenavi
 
-This is the repo for CodeNavi, a framework for applying neural net based langauge models to software projects, in order to help software developers identify bugs and ship better code.
+This is the repo for codenavi, a framework for applying neural net based langauge models to software projects, in order to help software developers identify bugs and ship better code.
 
 I worked on this project as part of my UC Berkely MIDS class - Natural Language Processing with Deep Learning
 
@@ -8,7 +8,7 @@ Paper here: [review]
 
 ## Overview
 
-This project contains the files for Can You Review My Pull Request, a framework to assist software developers review code by using Natural Language Processing techniques applied to code.
+This project contains the files for codenavi, a framework to assist software developers review code by using Natural Language Processing techniques applied to code.
 
 It is inspired from the following video, as well as the current domain I work in:
 
@@ -145,7 +145,7 @@ sudo wget <location of tar'd data>
 
 ### run docker container ###
 
-## tf 2
+## tf 2 - note, I tried Kolkir's TF2 implementation of code2seq, but ran into multiple bugs, which were not present with the original code2seq library.
 docker run --gpus all -it --rm -v "/home/ubuntu/project":"/workspace/project" -p 8888:8888 nvcr.io/nvidia/tensorflow:21.10-tf2-py3
 
 ## tf 1
@@ -195,12 +195,17 @@ source vm_env.sh
 
 ```
 
+# Results
 
+| Tree depth | F1 Score | 
+|---------|------------|
+| 2 | 0.533 |
+| 4 | 0.52 |
+| 8 | 0.533 |
 
 
 ## Papers
 
-I've pasted some papers below which helped in understanding this domain better.
 
 Code2Seq: Generating Sequences from Structured Representations of Code - Uri Alon, Shaked Brody, Omer Levy, Eran Yahav - https://arxiv.org/abs/1808.01400
 
