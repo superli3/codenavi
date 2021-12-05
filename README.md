@@ -145,7 +145,7 @@ sudo wget <location of tar'd data>
 
 ### run docker container ###
 
-## tf 2
+## tf 2 - note, I tried Kolkir's TF2 implementation of code2seq, but ran into multiple bugs, which were not present with the original code2seq library.
 docker run --gpus all -it --rm -v "/home/ubuntu/project":"/workspace/project" -p 8888:8888 nvcr.io/nvidia/tensorflow:21.10-tf2-py3
 
 ## tf 1
@@ -200,7 +200,6 @@ source vm_env.sh
 
 ## Papers
 
-I've pasted some papers below which helped in understanding this domain better.
 
 Code2Seq: Generating Sequences from Structured Representations of Code - Uri Alon, Shaked Brody, Omer Levy, Eran Yahav - https://arxiv.org/abs/1808.01400
 
