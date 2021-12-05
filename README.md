@@ -117,6 +117,8 @@ The model was trained on AWS. Due to the cost of a GPU based instance on AWS, th
 The VM instance in particular used was a g4dn.xlarge instance with a T4 GPU. An additional storage space of 1TB was also provisioned for the VM instance. 
 
 
+## Commands after provisioning the VM to train model.
+
 ```
 
 # command to connect to the vm
