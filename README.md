@@ -4,7 +4,7 @@ This is the repo for codenavi, a framework for applying neural net based langaug
 
 I worked on this project as part of my UC Berkely MIDS class - Natural Language Processing with Deep Learning
 
-Paper here: [review]
+Paper can be found [here](https://github.com/superli3/codenavi/blob/master/CodeNavi.pdf).
 
 ## Overview
 
