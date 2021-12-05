@@ -195,7 +195,13 @@ source vm_env.sh
 
 ```
 
+# Results
 
+| Tree depth | F1 Score | 
+---------------------
+| 2 | 0.533 |
+| 4 | 0.52 |
+| 8 | 0.533 |
 
 
 ## Papers
