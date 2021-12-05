@@ -1,0 +1,137 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "test_parsing - self generated corpus",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python.pythonPath": "C:\\Users\\lije\\Miniconda3\\envs\\testenvpython.exe",
+            "args": ["--data_dir", "D:\\mids\\data\\parsed_test\\testing", 
+                "--output_dir", "D:\\mids\\datadir\\data\\default2",
+                "--seed", "239"]
+        },
+        {
+            "name": "test_parsing1 - small dataset",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python.pythonPath": "C:\\Users\\lije\\Miniconda3\\envs\\testenvpython.exe",
+            "args": ["--data_dir", "D:\\mids\\data\\stage_cache\\ingest_test", 
+                "--output_dir", "D:\\mids\\datadir\\data\\default_test",
+                "--seed", "239",
+                "--max_path_width", "1",
+                "--max_path_len", "2",]
+        },
+        {
+            "name": "test_parsing1 - full dataset_v1",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python.pythonPath": "C:\\Users\\lije\\Miniconda3\\envs\\testenvpython.exe",
+            "args": ["--data_dir", "D:\\mids\\data\\stage_cache\\ingest", 
+                "--output_dir", "D:\\mids\\datadir\\data\\default",
+                "--seed", "239",
+                "--max_path_width", "2",
+                "--max_path_len", "3",]
+        },
+        {
+            "name": "test_parsing1 - full dataset_v2",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python.pythonPath": "C:\\Users\\lije\\Miniconda3\\envs\\testenvpython.exe",
+            "args": ["--data_dir", "D:\\mids\\data\\stage_cache\\ingest", 
+                "--output_dir", "D:\\mids\\datadir\\data\\default_v2",
+                "--seed", "239",
+                "--max_path_width", "2",
+                "--max_path_len", "6",]
+        },
+        {
+            "name": "test_parsing1 - full dataset_v3",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python.pythonPath": "C:\\Users\\lije\\Miniconda3\\envs\\testenvpython.exe",
+            "args": ["--data_dir", "D:\\mids\\data\\stage_cache\\ingest", 
+                "--output_dir", "D:\\mids\\datadir\\data\\default_v3",
+                "--seed", "239",
+                "--max_path_width", "2",
+                "--max_path_len", "4",]
+        },
+        {
+            "name": "balanced_parsing1 - small dataset",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python.pythonPath": "C:\\Users\\lije\\Miniconda3\\envs\\testenvpython.exe",
+            "args": ["--data_dir", "D:\\mids\\data\\stage\\ingest", 
+                "--output_dir", "D:\\mids\\datadir\\data\\default_1_2",
+                "--seed", "239",
+                "--max_path_width", "1",
+                "--max_path_len", "2",]
+        },
+        {
+            "name": "balanced_parsing1 - full dataset_v1",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python.pythonPath": "C:\\Users\\lije\\Miniconda3\\envs\\testenvpython.exe",
+            "args": ["--data_dir", "D:\\mids\\data\\stage\\ingest", 
+                "--output_dir", "D:\\mids\\datadir\\data\\default_2_3",
+                "--seed", "239",
+                "--max_path_width", "2",
+                "--max_path_len", "3",]
+        },
+        {
+            "name": "balanced_parsing1 - full dataset_v2",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python.pythonPath": "C:\\Users\\lije\\Miniconda3\\envs\\testenvpython.exe",
+            "args": ["--data_dir", "D:\\mids\\data\\stage\\ingest", 
+                "--output_dir", "D:\\mids\\datadir\\data\\default_2_6",
+                "--seed", "239",
+                "--max_path_width", "2",
+                "--max_path_len", "6",]
+        },
+        {
+            "name": "balanced_parsing1 - full dataset_v3",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python.pythonPath": "C:\\Users\\lije\\Miniconda3\\envs\\testenvpython.exe",
+            "args": ["--data_dir", "D:\\mids\\data\\stage\\ingest", 
+                "--output_dir", "D:\\mids\\datadir\\data\\default_2_4",
+                "--seed", "239",
+                "--max_path_width", "2",
+                "--max_path_len", "4",]
+        },
+        {
+            "name": "balanced_parsing1 - full dataset_v4",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python.pythonPath": "C:\\Users\\lije\\Miniconda3\\envs\\testenvpython.exe",
+            "args": ["--data_dir", "D:\\mids\\data\\stage\\ingest", 
+                "--output_dir", "D:\\mids\\datadir\\data\\default_2_8",
+                "--seed", "239",
+                "--max_path_width", "2",
+                "--max_path_len", "8",]
+        }
+    ]
+    ]
+}

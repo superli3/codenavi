@@ -1,5 +1,5 @@
 # Ignore these files on checkin
-/**/*.json
+#/**/*.json
 /**/HelloWorld
 
 # Ignore code2seq iteration by kolkir, https://github.com/Kolkir/code2seq
