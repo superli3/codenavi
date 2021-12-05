@@ -82,6 +82,13 @@ The first step here is to parsing the individual code into [abstract syntax tree
 
 
 ```
+# join manual labeled data with scraped PR data from github. Source file for manual lables must 
+# follow format of labeled_bugs.csv
+python map_generator.py
+
+# move data to separate directories. Sample required amounts to enable 1:1 balance
+python labeled_map_mover.py
+
 ## Parse positive files
 
 # Enter docker container
@@ -97,13 +104,13 @@ docker run -it --entrypoint /bin/bash  -v d:/mids/data/negative:/home 082ebf62f8
 
 # Execute script to generate asts within the docker container
 ./ast_generator.sh
-```
 
+# Preprocessing step for json_to_seq. Combine qualifying files that were parsed by semantic into one file
+python clean_and_agg_seqs.py
 
+# Convert generated sequences with labels encoded at the beginning of the sequence.
+python json_to_seq_v2.py
 ```
-## convert files
-```
-
 
 
 # Model training
