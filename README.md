@@ -35,8 +35,6 @@ Matplotlib has an extensive history of pull requests (10k+), as well has a long 
 
 I went through and manually labeled a dataset, however, depending on how the discussion around a project is formatted, it may be conducive to create an additional framework to scrape and label this data automatically.
 
-An additional consideration here is that you will wnat to
-
 ## 2) Scrape the data
 
 Data was scraped using the [GitHub Pull Request API](https://docs.github.com/en/rest/reference/pulls). From this API, several important fields were pulled from the resulting API 
