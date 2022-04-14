@@ -116,7 +116,7 @@ python json_to_seq_v2.py
 
 # Model training
 
-I will be using an approach based on the outlook referenced in the seq2seq paper. We have generated our labels and sequences, so the next step will be to utilize a language model that can adequately 
+I will be using an approach based on the outlook referenced in the seq2seq paper. We have generated our labels and sequences, so the next step will be to utilize a language model. Most of the code in the project covers the data generation portion (can be applied across a wide array of projects on Github!) - the rest is left up to actual models to actually run a language model. 
 
 ## Setting up a VM
 
