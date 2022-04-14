@@ -17,9 +17,9 @@ The purpose of this project is to create a framework which analyzes a software p
 
 ### Purpose
 
-This project is unique in that it treats each unit of record for a machine learning model as the modified code in the PR, instead of generic code snippets. Most existing papers at the time of writing use prepackaged datasets to tackle this problem - this repo is an effort to tackle this problem at scale. Given that the space is rapidly evolving (i.e., with OpenAI codex, it is possible that some elements may not prove as useful over the long term, but various data pipeline elements will likely remain useful for a long period of time.
+This project is unique in that it treats each unit of record for a machine learning model as the modified code in the PR, instead of generic code snippets. Most existing papers at the time of writing use prepackaged datasets to tackle this problem - this repo is an effort to tackle this problem at scale. Given that the space is rapidly evolving (i.e., with OpenAI codex, it is possible that some elements may not prove as useful over the long term, i.e. AST approach), but various data pipeline elements will likely remain useful for others for a long period of time.
 
-It takes existing repos that use a seq2seq approach to code, and structrues it so that most, if not all code on github can be passed through this approach.
+It takes existing repos that use a seq2seq approach to code, and structrues it so that most, if not all code on github can be passed through a seq2seq abstract syntax tree encoder decoder neural model.
 
 # Machine Learning Pipeline Overview
 
