@@ -198,6 +198,8 @@ source vm_env.sh
 
 # Results
 
+Honestly, not terrible, but lots of room for improvement. But there are additional improvements that can be made here, as it comes to isolating changes that were actually made by the dev, and alternative models that may be subsequently left to future devs!
+
 | Tree depth | F1 Score | 
 |---------|------------|
 | 2 | 0.533 |
