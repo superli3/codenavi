@@ -6,6 +6,8 @@ I worked on this project as part of my UC Berkely MIDS class - Natural Language 
 
 Paper can be found [here](https://github.com/superli3/codenavi/blob/master/CodeNavi.pdf).
 
+Underlying tech used: Python, docker, haskell, Code2Seq, Tensorflow
+
 ## Overview
 
 This project contains the files for codenavi, a framework to assist software developers review code by using Natural Language Processing techniques applied to code.
