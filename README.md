@@ -200,7 +200,11 @@ source vm_env.sh
 
 # Results
 
-Honestly, not terrible, but lots of room for improvement. But there are additional improvements that can be made here, as it comes to isolating changes that were actually made by the dev, and alternative models that may be subsequently left to future devs!
+Honestly, not terrible, but lots of room for improvement. 
+
+Some potential room for improvement, to be left for future devs:
+  -Isolating changes
+  -Alternative models - one weakness of code2seq is longer ASTs, as noted by the author
 
 | Tree depth | F1 Score | 
 |---------|------------|
