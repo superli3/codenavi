@@ -10,13 +10,14 @@ Paper can be found [here](https://github.com/superli3/codenavi/blob/master/CodeN
 
 This project contains the files for codenavi, a framework to assist software developers review code by using Natural Language Processing techniques applied to code.
 
-It is inspired from the following video, as well as the current domain I work in:
-
-[![how we write/review code in big tech companies](https://img.youtube.com/vi/rR4n-0KYeKQ/0.jpg)](https://www.youtube.com/watch?v=rR4n-0KYeKQ "how we write/review code in big tech companies")
-
+### Primer
 In large established software development projects, bugs can be costly. [A IBM study](https://www.celerity.com/the-true-cost-of-a-software-bug) found that bugs can be 5x more costly to identify & fix after it is deployed, compared to being identified in the design phase. Software development can be fast moving, complicated, and confusing. Technical details may be siloed with certain developers, and information on technical details may be lost over time. Common industry practices involve structured processes such as CI/CD, and testing framework - this project aims to expand on the existing frameworks to help reduce the rise of recurring bugs in software projects.
 
 The purpose of this project is to create a framework which analyzes a software project's history of pull requests, and trains a language model to assess the particular risk of introducing an issue or problematic code into the main/master branch. The score will then be presented to developers as a way to help them review individual pull requests.
+
+### Purpose
+
+This project is unique in that it treats each unit of record for a machine learning model as the modified code in the PR, instead of generic code snippets. Most existing papers at the time of writing use prepackaged datasets to tackle this problem - this repo is an effort to tackle this problem at scale. It takes existing repos that use a seq2seq approach to code, and structrues it so that most, if not all code on github can be passed through this approach.
 
 # Machine Learning Pipeline Overview
 
