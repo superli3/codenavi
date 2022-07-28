@@ -2,7 +2,7 @@
 
 This is the repo for codenavi, a framework for applying neural net based langauge models to software projects, in order to help software developers identify bugs and ship better code.
 
-I worked on this project as part of my UC Berkely MIDS class - Natural Language Processing with Deep Learning
+I worked on this project as part of my UC Berkley MIDS class - Natural Language Processing with Deep Learning
 
 Paper can be found [here](https://github.com/superli3/codenavi/blob/master/CodeNavi.pdf).
 
